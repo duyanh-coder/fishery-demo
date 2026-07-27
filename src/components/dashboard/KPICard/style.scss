@@ -1,0 +1,53 @@
+.kpi-card {
+
+    border-radius: 16px;
+
+    transition: .25s;
+
+    height: 100%;
+
+    &:hover {
+
+        transform: translateY(-4px);
+
+    }
+
+    .ant-card-body{
+
+        padding:20px;
+
+    }
+
+}
+
+.kpi-card__header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+.kpi-card__icon{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:12px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#fff;
+
+    font-size:22px;
+
+}

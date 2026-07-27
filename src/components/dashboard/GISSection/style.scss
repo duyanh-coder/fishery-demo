@@ -1,0 +1,37 @@
+.gis-section {
+
+    height: 100%;
+
+}
+
+.gis-map-placeholder {
+
+    height: 320px;
+
+    background: #eef5ff;
+
+    border: 1px dashed #91caff;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 16px;
+
+    color: #666;
+
+}
+
+.gis-item {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+}

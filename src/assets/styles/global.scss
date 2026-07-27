@@ -1,0 +1,29 @@
+@use "./variables";
+@use "./reset";
+@use "./scrollbar";
+@use "./utilities";
+@use "./animation";
+
+/* =========================================
+   Global Layout
+========================================= */
+
+body {
+  background: var(--color-background);
+}
+
+.ant-layout {
+  min-height: 100vh;
+}
+
+.ant-card {
+  border-radius: var(--radius-lg);
+}
+
+.ant-table {
+  border-radius: var(--radius-md);
+}
+
+.ant-btn {
+  transition: all .2s;
+}

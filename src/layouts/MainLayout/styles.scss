@@ -1,0 +1,55 @@
+.main-layout {
+    min-height: 100vh;
+}
+
+.main-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: var(--color-surface);
+
+    padding: 0 24px;
+
+    border-bottom: 1px solid var(--color-border);
+}
+
+.main-content {
+
+    padding: 24px;
+
+    margin: 24px;
+
+    background: var(--color-surface);
+
+    border-radius: 12px;
+
+    overflow: auto;
+}
+
+.main-footer {
+
+    text-align: center;
+
+    color: var(--color-text-secondary);
+}
+
+.logo {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    height: 64px;
+
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: 700;
+}

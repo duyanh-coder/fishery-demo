@@ -1,60 +1,30 @@
-import  L, { DivIcon } from "leaflet";
-import { renderToStaticMarkup } from "react-dom/server";
+import L from "leaflet";
 
-import {
-    EnvironmentFilled,
-    WarningFilled,
-    RadarChartOutlined,
-    CarOutlined,
-    // AnchorOutlined,
-} from "@ant-design/icons";
+import FarmIcon from "@/assets/map-icons/farm.svg";
+import PortIcon from "@/assets/map-icons/port.svg";
+import MonitoringIcon from "@/assets/map-icons/monitoring.svg";
+import VesselIcon from "@/assets/map-icons/vessel.svg";
+import WarningIcon from "@/assets/map-icons/warning.svg";
 
-import type { ReactNode } from "react";
+export type MarkerType =
+    | "farm"
+    | "port"
+    | "monitoring"
+    | "vessel"
+    | "warning";
 
-const getIcon = (type: string): ReactNode => {
-    switch (type) {
-        case "farm":
-            return <EnvironmentFilled />;
-
-        // case "port":
-        //     return <AnchorOutlined />;
-
-        case "monitoring":
-            return <RadarChartOutlined />;
-
-        case "warning":
-            return <WarningFilled />;
-
-        case "vessel":
-            return <CarOutlined />;
-
-        default:
-            return <EnvironmentFilled />;
-    }
+const iconMap = {
+    farm: FarmIcon,
+    port: PortIcon,
+    monitoring: MonitoringIcon,
+    vessel: VesselIcon,
+    warning: WarningIcon,
 };
 
-const getColor = (type: string) => {
-    switch (type) {
-        case "farm":
-            return "#52c41a";
-
-        case "port":
-            return "#1677ff";
-
-        case "monitoring":
-            return "#fa8c16";
-
-        case "warning":
-            return "#ff4d4f";
-
-        case "vessel":
-            return "#722ed1";
-
-        default:
-            return "#1677ff";
-    }
-};
-
-// export const getMarkerColor = (...)
-
-// export const createMarkerIcon(...)
+export const createMarkerIcon = (type: MarkerType) =>
+    L.icon({
+        iconUrl: iconMap[type],
+        iconSize: [36, 36],
+        iconAnchor: [18, 36],
+        popupAnchor: [0, -36],
+    });

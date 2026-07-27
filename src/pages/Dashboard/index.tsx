@@ -1,19 +1,10 @@
-// src/pages/Dashboard/index.tsx
-
 import { Col, Row } from "antd";
 
 import KPISection from "@/components/dashboard/KPISection";
 import PageContainer from "@/components/common/PageContainer";
 import PageTitle from "@/components/common/PageTitle";
 
-// import ProductionChart from "@/components/dashboard/ProductionChart";
-// import AquacultureChart from "@/components/dashboard/AquacultureChart";
-// import GISSection from "@/components/dashboard/GISSection";
-// import IUUAlertPanel from "@/components/dashboard/IUUAlertPanel";
-// import RecentActivity from "@/components/dashboard/RecentActivity";
-
-import "./Dashboard.scss";
-
+import "./style.scss";
 import {
   dashboardSummary,
   productionChart,
@@ -26,6 +17,16 @@ import ProductionChart from "@/components/dashboard/ProductionChart";
 import AquacultureChart from "@/components/dashboard/AquacultureChart";
 import GISSection from "@/components/dashboard/GISSection";
 import IUUAlertPanel from "@/components/dashboard/IUUAlertPanel";
+
+import GISMap from "@/components/gis/GISMap";
+
+import {
+    farms,
+    ports,
+    stations,
+    vessels,
+    warnings,
+} from "@/mock/gis";
 
 const DashboardPage = () => {
   return (
@@ -49,8 +50,17 @@ const DashboardPage = () => {
 
       <Row gutter={16}>
         <Col span={16}>
-          <GISSection markers={gisMarkers} />
+          <GISMap
+            farms={farms}
+            ports={ports}
+            stations={stations}
+            vessels={vessels}
+            warnings={warnings}
+          />
         </Col>
+        {/* <Col span={16}>
+          <GISSection markers={gisMarkers} />
+        </Col> */}
 
         <Col span={8}>
           <IUUAlertPanel alerts={iuuAlerts} />
@@ -59,7 +69,6 @@ const DashboardPage = () => {
 
       {/* <RecentActivity data={recentActivities} /> */}
     </PageContainer>
-    
   );
 };
 

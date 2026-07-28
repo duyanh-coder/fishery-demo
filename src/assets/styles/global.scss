@@ -10,6 +10,15 @@
 
 body {
   background: var(--color-background);
+  color: var(--color-text);
+}
+
+html[data-theme="dark"] {
+  --color-background: #0f172a;
+  --color-surface: #111827;
+  --color-text: #f8fafc;
+  --color-text-secondary: #94a3b8;
+  --color-border: #334155;
 }
 
 .ant-layout {

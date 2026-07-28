@@ -9,7 +9,7 @@ export default function AppLogo() {
         margin: 0,
       }}
     >
-      FISHERY
+      HỆ THỐNG THỦY SẢN
     </Typography.Title>
   );
 }

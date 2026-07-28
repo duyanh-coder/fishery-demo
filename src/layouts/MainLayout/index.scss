@@ -9,3 +9,23 @@
 .layout-footer {
   text-align: center;
 }
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 24px;
+
+  background: #fff;
+
+  border-bottom: 1px solid #f0f0f0;
+
+  .ant-btn {
+    font-size: 18px;
+  }
+
+  .ant-avatar {
+    cursor: pointer;
+  }
+}

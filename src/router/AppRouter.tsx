@@ -1,71 +1,100 @@
-// src/router/AppRouter.tsx
+// // src/router/AppRouter.tsx
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
-import MainLayout from "@/layouts/MainLayout";
+import MainLayout from "../layouts/MainLayout";
 
-import DashboardPage from "@/pages/Dashboard";
+import Dashboard from "../pages/Dashboard";
+// import Farm from "../pages/Farm";
+import FarmPage from "@/pages/Farm";
 
-import LoginPage from "@/pages/Login";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainLayout />,
+    children: [
+      {
+        index: true,
+        element: <Dashboard />,
+      },
+      {
+        path: "/farm",
+        element: <FarmPage />,
+      },
+    ],
+  },
+]);
 
-import NotFoundPage from "@/pages/NotFound";
+export default router;
 
-import ProtectedRoute from "./ProtectedRoute";
 
-export default function AppRouter() {
 
-  return (
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-    <BrowserRouter>
+// import MainLayout from "@/layouts/MainLayout";
 
-      <Routes>
+// import DashboardPage from "@/pages/Dashboard";
 
-        <Route
+// import LoginPage from "@/pages/Login";
 
-          path="/login"
+// import NotFoundPage from "@/pages/NotFound";
 
-          element={<LoginPage />}
+// import ProtectedRoute from "./ProtectedRoute";
 
-        />
+// export default function AppRouter() {
 
-        <Route
+//   return (
 
-          path="/"
+//     <BrowserRouter>
 
-          element={
+//       <Routes>
 
-            <ProtectedRoute>
+//         <Route
 
-              <MainLayout />
+//           path="/login"
 
-            </ProtectedRoute>
+//           element={<LoginPage />}
 
-          }
+//         />
 
-        >
+//         <Route
 
-          <Route
+//           path="/"
 
-            index
+//           element={
 
-            element={<DashboardPage />}
+//             <ProtectedRoute>
 
-          />
+//               <MainLayout />
 
-        </Route>
+//             </ProtectedRoute>
 
-        <Route
+//           }
 
-          path="*"
+//         >
 
-          element={<NotFoundPage />}
+//           <Route
 
-        />
+//             index
 
-      </Routes>
+//             element={<DashboardPage />}
 
-    </BrowserRouter>
+//           />
 
-  );
+//         </Route>
 
-}
+//         <Route
+
+//           path="*"
+
+//           element={<NotFoundPage />}
+
+//         />
+
+//       </Routes>
+
+//     </BrowserRouter>
+
+//   );
+
+// }

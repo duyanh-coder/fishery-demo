@@ -36,9 +36,9 @@ const DashboardPage = () => {
         subTitle="Hệ thống chuyển đổi số ngành thủy sản"
       />
 
-      <KPISection data={dashboardSummary} />
+      <KPISection data={dashboardSummary} styles={{ marginBottom: 20 }} />
 
-      <Row gutter={16}>
+      <Row gutter={[20, 20]}>
         <Col span={12}>
           <ProductionChart data={productionChart} />
         </Col>
@@ -48,7 +48,7 @@ const DashboardPage = () => {
         </Col>
       </Row>
 
-      <Row gutter={16}>
+      <Row gutter={[20, 20]}>
         <Col span={16}>
           <GISMap
             farms={farms}

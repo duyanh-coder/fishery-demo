@@ -2,6 +2,7 @@
 
 import DashboardPage from "@/pages/Dashboard";
 import LoginPage from "@/pages/Login";
+import Farm from "@/pages/Farm";
 
 import { ROUTES } from "./routes";
 
@@ -24,5 +25,10 @@ export const routeConfig = [
     layout: "main",
 
     title: "Dashboard",
+  },
+
+  {
+    path: "/farm",
+    element: <Farm />
   },
 ];

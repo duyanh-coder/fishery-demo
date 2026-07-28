@@ -23,9 +23,10 @@ const iconMap = [
 
 type Props = {
     data: DashboardKPI[];
+    styles?: React.CSSProperties;
 };
 
-const KPISection = ({ data }: Props) => {
+const KPISection = ({ data, styles }: Props) => {
 
     const mapped = data.map((item, index) => ({
         ...item,
@@ -33,7 +34,7 @@ const KPISection = ({ data }: Props) => {
     }));
 
     return (
-        <Row gutter={[16, 16]}>
+        <Row gutter={[20, 20]} style={styles}>
             {mapped.map((item) => (
                 <KPICard key={item.id} item={item} />
             ))}

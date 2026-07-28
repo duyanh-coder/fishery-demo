@@ -1,5 +1,13 @@
 import { Layout, Menu } from "antd";
-import { DashboardOutlined } from "@ant-design/icons";
+import {
+  DashboardOutlined,
+  AppstoreOutlined,
+  EnvironmentOutlined,
+  CarOutlined,
+  RadarChartOutlined,
+  GlobalOutlined,
+  FileTextOutlined,
+} from "@ant-design/icons";
 
 import AppLogo from "./AppLogo";
 
@@ -14,16 +22,99 @@ export default function AppSidebar() {
 
       <Menu
         mode="inline"
-
         theme="dark"
-
         defaultSelectedKeys={["dashboard"]}
-
+        defaultOpenKeys={[
+          "aquaculture",
+          "fishing",
+          "monitoring",
+        ]}
         items={[
           {
             key: "dashboard",
             icon: <DashboardOutlined />,
             label: "Dashboard",
+          },
+
+          {
+            key: "aquaculture",
+            icon: <AppstoreOutlined />,
+            label: "Quản lý thủy sản",
+            children: [
+              {
+                key: "/farm",
+                icon: <EnvironmentOutlined />,
+                label: "Vùng nuôi",
+              },
+              {
+                key: "seed",
+                label: "Cơ sở giống",
+              },
+              {
+                key: "production",
+                label: "Sản lượng",
+              },
+              {
+                key: "disease",
+                label: "Dịch bệnh",
+              },
+            ],
+          },
+
+          {
+            key: "fishing",
+            icon: <CarOutlined />,
+            label: "Khai thác thủy sản",
+            children: [
+              {
+                key: "vessel",
+                label: "Tàu cá",
+              },
+              {
+                key: "license",
+                label: "Giấy phép",
+              },
+              {
+                key: "inspection",
+                label: "Đăng kiểm",
+              },
+              {
+                key: "vms",
+                label: "VMS",
+              },
+            ],
+          },
+
+          {
+            key: "monitoring",
+            icon: <RadarChartOutlined />,
+            label: "Quan trắc môi trường",
+            children: [
+              {
+                key: "station",
+                label: "Điểm quan trắc",
+              },
+              {
+                key: "result",
+                label: "Kết quả quan trắc",
+              },
+              {
+                key: "warning",
+                label: "Cảnh báo",
+              },
+            ],
+          },
+
+          {
+            key: "gis",
+            icon: <GlobalOutlined />,
+            label: "GIS",
+          },
+
+          {
+            key: "report",
+            icon: <FileTextOutlined />,
+            label: "Báo cáo",
           },
         ]}
       />

@@ -1,32 +1,27 @@
 import { Layout } from "antd";
+import { Outlet } from "react-router-dom";
 
-import "./styles.scss";
+import AppSidebar from "@/layouts/MainLayout/AppSidebar";
+import AppHeader from "@/layouts/MainLayout/AppHeader";
 
-import AppHeader from "./AppHeader";
-import AppSidebar from "./AppSidebar";
-import AppFooter from "./AppFooter";
-import AppContent from "./AppContent";
+const { Content } = Layout;
 
 export default function MainLayout() {
-
     return (
-
-        <Layout className="main-layout">
-
+        <Layout style={{ minHeight: "100vh" }}>
             <AppSidebar />
 
             <Layout>
-
                 <AppHeader />
 
-                <AppContent />
-
-                <AppFooter />
-
+                <Content
+                    style={{
+                        padding: 24,
+                    }}
+                >
+                    <Outlet />
+                </Content>
             </Layout>
-
         </Layout>
-
     );
-
 }

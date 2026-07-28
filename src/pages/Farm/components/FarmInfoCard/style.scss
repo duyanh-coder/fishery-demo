@@ -1,0 +1,18 @@
+.farm-info-card {
+    height: 100%;
+    width: 100%;
+
+    &__header {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .ant-descriptions {
+        margin-top: 12px;
+    }
+
+    .ant-descriptions-item-label {
+        width: 140px;
+        font-weight: 600;
+    }
+}

@@ -6,23 +6,24 @@ import type { ProductionChartItem } from "@/types/dashboard";
 import { getProductionChartOption } from "./option";
 
 interface Props {
-    data: ProductionChartItem[];
+  data: ProductionChartItem[];
 }
 
 const ProductionChart = ({ data }: Props) => {
-    return (
-        <Card
-            title="Sản lượng thủy sản theo tháng"
-            className="production-chart"
-        >
-            <ReactECharts
-                option={getProductionChartOption(data)}
-                style={{
-                    height: 350,
-                }}
-            />
-        </Card>
-    );
+  return (
+    <Card title="Sản lượng thủy sản theo tháng" className="production-chart">
+      <ReactECharts
+        option={getProductionChartOption(data)}
+        opts={{
+          renderer: "svg",
+        }}
+        style={{
+          height: 350,
+          fontFamily: "Segoe UI",
+        }}
+      />
+    </Card>
+  );
 };
 
 export default ProductionChart;

@@ -19,7 +19,11 @@ function AppContent() {
           mode === "dark"
             ? theme.darkAlgorithm
             : theme.defaultAlgorithm,
-      }}
+        token: {
+            fontFamily:
+                '"Inter", "Segoe UI", Roboto, Arial, sans-serif',
+        },
+      }}      
     >
       <RouterProvider router={router} />
     </ConfigProvider>

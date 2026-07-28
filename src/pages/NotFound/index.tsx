@@ -1,8 +1,15 @@
-// src/pages/NotFound/index.tsx
+import {
+    Result,
+    Button,
+} from "antd";
 
-import { Result, Button } from "antd";
+import {
+    useNavigate,
+} from "react-router-dom";
 
 export default function NotFoundPage() {
+
+    const navigate = useNavigate();
 
     return (
 
@@ -14,7 +21,24 @@ export default function NotFoundPage() {
 
             subTitle="Không tìm thấy trang."
 
-            extra={<Button type="primary">Trang chủ</Button>}
+            extra={[
+
+                <Button
+                    key="home"
+                    type="primary"
+                    onClick={() => navigate("/")}
+                >
+                    Dashboard
+                </Button>,
+
+                <Button
+                    key="back"
+                    onClick={() => navigate(-1)}
+                >
+                    Quay lại
+                </Button>,
+
+            ]}
 
         />
 

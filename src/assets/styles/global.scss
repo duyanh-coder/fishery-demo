@@ -3,6 +3,13 @@
 @use "./scrollbar";
 @use "./utilities";
 @use "./animation";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap&subset=vietnamese');
+html,
+body,
+#root {
+    font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+}
+
 
 /* =========================================
    Global Layout

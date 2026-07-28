@@ -2,7 +2,9 @@
 
 import DashboardPage from "@/pages/Dashboard";
 import LoginPage from "@/pages/Login";
-import Farm from "@/pages/Farm";
+// import Farm from "@/pages/Farm";
+import FarmPage from "@/pages/Farm";
+import FarmDetail from "@/pages/Farm/Detail";
 
 import { ROUTES } from "./routes";
 
@@ -29,6 +31,10 @@ export const routeConfig = [
 
   {
     path: "/farm",
-    element: <Farm />
+    element: <FarmPage />
   },
+  {
+    path: "/farm/:id",
+    element: <FarmDetail />,
+},
 ];

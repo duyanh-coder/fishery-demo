@@ -20,13 +20,7 @@ import IUUAlertPanel from "@/components/dashboard/IUUAlertPanel";
 
 import GISMap from "@/components/gis/GISMap";
 
-import {
-    farms,
-    ports,
-    stations,
-    vessels,
-    warnings,
-} from "@/mock/gis";
+import { farms, ports, stations, vessels, warnings } from "@/mock/gis";
 
 const DashboardPage = () => {
   return (
@@ -39,7 +33,9 @@ const DashboardPage = () => {
       <KPISection data={dashboardSummary} styles={{ marginBottom: 20 }} />
 
       <Row gutter={[20, 20]}>
-        <Col span={12}>
+        <Col
+          span={12}
+        >
           <ProductionChart data={productionChart} />
         </Col>
 

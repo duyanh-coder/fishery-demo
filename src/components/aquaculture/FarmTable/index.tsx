@@ -16,13 +16,14 @@ import {
 } from "@ant-design/icons";
 
 import type { Farm } from "@/types/farm";
-// import { farmList } from "@/mock/farm";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
     data: Farm[];
 }
 
 export default function FarmTable({ data }: Props) {
+    const navigate = useNavigate();
 
     const columns: ColumnsType<Farm> = [
 
@@ -98,9 +99,10 @@ export default function FarmTable({ data }: Props) {
                         size="small"
                         type="text"
                         icon={<EyeOutlined />}
-                        onClick={() => {
-                            console.log("View", record);
-                        }}
+                        // onClick={() => {
+                        //     console.log("View", record);
+                        // }}
+                        onClick={() => navigate(`/farm/${record.id}`)}
                     />
 
                     <Button

@@ -5,8 +5,14 @@ import type { EChartsOption } from "echarts";
 export const getProductionChartOption = (
     data: ProductionChartItem[]
 ): EChartsOption => ({
+    textStyle: {
+        fontFamily: "Inter, Segoe UI, Arial, Tahoma, sans-serif",
+    },
     tooltip: {
         trigger: "axis",
+        textStyle: {
+            fontFamily: "Inter, Segoe UI, Arial, Tahoma, sans-serif",
+        },
     },
 
     grid: {

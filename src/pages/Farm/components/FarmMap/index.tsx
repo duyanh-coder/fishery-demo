@@ -1,68 +1,50 @@
 import { Card, Descriptions, Tag, Typography } from "antd";
 
-import { MapContainer, Marker, Polygon, Popup, TileLayer } from "react-leaflet";
+import {
+  MapContainer,
+  Marker,
+  Polygon,
+  Popup,
+  ScaleControl,
+  TileLayer,
+  ZoomControl,
+} from "react-leaflet";
 
 import "./style.scss";
 import type { Farm } from "../../types";
+import MapOverlay from "./components/MapOverlay";
+import MapToolbar from "./components/MapToolbar";
+import FarmMarker from "./components/FarmMarker";
+import FarmPolygon from "./components/FarmPolygon";
+import FitBounds from "./hooks/useFitBounds";
 
 interface FarmMapProps {
   farm: Farm;
 }
 
 const FarmMap = ({ farm }: FarmMapProps) => {
+  // console.log(farm);
   return (
-    <Card title="Vị trí vùng nuôi" className="farm-map">
-      <MapContainer
-        center={[farm.location.lat, farm.location.lng]}
-        zoom={16}
-        scrollWheelZoom={false}
-      >
+    <Card className="farm-map">
+      <MapOverlay farm={farm} />
+
+      <MapToolbar farm={farm} />
+
+      <MapContainer>
         <TileLayer
           attribution="OpenStreetMap"
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        <Marker position={[farm.location.lat, farm.location.lng]}>
-          {/* <Popup>{farm.name}</Popup> */}
-          <Popup>
-            <Typography.Title level={5} style={{ marginBottom: 12 }}>
-              {farm.name}
-            </Typography.Title>
+        <FarmMarker farm={farm} />
 
-            <Descriptions size="small" column={1}>
-              <Descriptions.Item label="Mã">{farm.code}</Descriptions.Item>
+        <FarmPolygon farm={farm} />
 
-              <Descriptions.Item label="Địa chỉ">
-                {farm.location.address}
-              </Descriptions.Item>
+        <FitBounds polygon={farm.polygon} />
 
-              <Descriptions.Item label="Diện tích">
-                {farm.area} ha
-              </Descriptions.Item>
+        <ScaleControl position="bottomleft" />
 
-              <Descriptions.Item label="Đối tượng">
-                {farm.species}
-              </Descriptions.Item>
-
-              <Descriptions.Item label="Trạng thái">
-                <Tag color="success">{farm.status}</Tag>
-              </Descriptions.Item>
-            </Descriptions>
-          </Popup>
-        </Marker>
-        <Polygon
-          positions={farm.polygon}
-
-          pathOptions={{
-            color: "#1890ff",
-
-            fillColor: "#69b1ff",
-
-            fillOpacity: 0.35,
-
-            weight: 2,
-          }}
-        />
+        <ZoomControl position="bottomright" />
       </MapContainer>
     </Card>
   );

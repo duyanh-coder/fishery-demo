@@ -8,12 +8,27 @@ import Dashboard from "../pages/Dashboard";
 // import Farm from "../pages/Farm";
 import FarmPage from "@/pages/Farm";
 import FarmDetail from "@/pages/Farm/Detail";
+import HatcheryPage from "@/pages/Hatchery";
+import HatcheryDetail from "@/pages/Hatchery/Detail";
+import ProductionPage from "@/pages/Production";
+import DiseasePage from "@/pages/Disease";
+import VesselPage from "@/pages/Vessel";
+import LicensePage from "@/pages/License";
+import InspectionPage from "@/pages/Inspection";
+import StationPage from "@/pages/Station";
+import VMSPage from "@/pages/VMS";
+import WaterQualityPage from "@/pages/WaterQuality";
+import EnvironmentWarningPage from "@/pages/EnvironmentWarning";
+import GisPage from "@/pages/Gis";
+
+import ReportDashboardPage from "@/pages/Reports/Dashboard";
+import ProductionReportPage from "@/pages/Reports/ProductionReport";
+// import WaterQualityReportPage from "@/pages/Reports/WaterQualityReport";
+// import EnvironmentWarningReportPage from "@/pages/Reports/EnvironmentWarningReport";
+// import IUUReportPage from "@/pages/Reports/IUUReport";
+// import ExportCenterPage from "@/pages/Reports/ExportCenter";
+
 import NotFoundPage from "@/pages/NotFound";
-// import Ship from "../pages/Ship";
-// import ShipPage from "../pages/Ship";
-// import ShipDetail from "../pages/Ship/Detail";
-// import SeedPage from "@/pages/Seed";
-// import SeedDetail from "@/pages/Seed/Detail";
 
 const router = createBrowserRouter([
   {
@@ -38,34 +53,135 @@ const router = createBrowserRouter([
           breadcrumb: "Chi tiết vùng nuôi",
         },
       },
+      {
+        path: "/hatchery",
+        element: <HatcheryPage />,
+        handle: {
+          breadcrumb: "Cơ sở giống",
+        },
+      },
+      {
+        path: "/hatchery/:id",
+        element: <HatcheryDetail />,
+        handle: {
+          breadcrumb: "Chi tiết cơ sở giống",
+        },
+      },
+      {
+        path: "/production",
+        element: <ProductionPage />,
+        handle: {
+          breadcrumb: "Sản lượng",
+        },
+      },
+      {
+        path: "/disease",
+        element: <DiseasePage />,
+        handle: {
+          breadcrumb: "Dịch bệnh",
+        },
+      },
+      {
+        path: "/vessel",
+        element: <VesselPage />,
+        handle: {
+          breadcrumb: "Tàu cá",
+        },
+      },
+      {
+        path: "/license",
+        element: <LicensePage />,
+        handle: {
+          breadcrumb: "Giấy phép",
+        },
+      },
+      {
+        path: "/inspection",
+        element: <InspectionPage />,
+        handle: {
+          breadcrumb: "Đăng kiểm",
+        },
+      },
+      {
+        path: "/vms",
+        element: <VMSPage />,
+        handle: {
+          breadcrumb: "VMS",
+        },
+      },
+      {
+        path: "/station",
+        element: <StationPage />,
+        handle: {
+          breadcrumb: "Quan trắc môi trường",
+        },
+      },
+      {
+        path: "/water-quality",
+        element: <WaterQualityPage />,
+        handle: {
+          breadcrumb: "Kết quả quan trắc",
+        },
+      },
+      {
+        path: "/environment-warning",
+        element: <EnvironmentWarningPage />,
+        handle: {
+          breadcrumb: "Cảnh báo",
+        },
+      },
+      {
+        path: "/gis",
+        element: <GisPage />,
+        handle: {
+          breadcrumb: "GIS",
+        },
+      },
+
+      {
+        path: "/reports-dashboard",
+        element: <ReportDashboardPage />,
+        handle: {
+          breadcrumb: "Dashboard",
+        },
+      },
+
+      {
+        path: "/reports-production",
+        element: <ProductionReportPage />,
+        handle: {
+          breadcrumb: "Báo cáo sản lượng",
+        },
+      },
       // {
-      //   path: "/ship",
-      //   element: <ShipPage />,
+      //   path: "/reports/water-quality",
+      //   element: <WaterQualityReportPage />,
       //   handle: {
-      //     breadcrumb: "Tàu cá",
+      //     breadcrumb: "Báo cáo chất lượng nước",
       //   },
       // },
       // {
-      //   path: "/ship/:id",
-      //   element: <ShipDetail />,
+      //   path: "/reports/environment-warning",
+      //   element: <EnvironmentWarningReportPage />,
       //   handle: {
-      //     breadcrumb: "Chi tiết tàu cá",
+      //     breadcrumb: "Báo cáo cảnh báo",
       //   },
       // },
       // {
-      //   path: "/seed",
-      //   element: <SeedPage />,
+      //   path: "/reports/iuu",
+      //   element: <IUUReportPage />,
       //   handle: {
-      //     breadcrumb: "Cơ sở giống",
+      //     breadcrumb: "Báo cáo IUU",
       //   },
       // },
       // {
-      //   path: "/seed/:id",
-      //   element: <SeedDetail />,
+      //   path: "/reports/export-center",
+      //   element: <ExportCenterPage />,
       //   handle: {
-      //     breadcrumb: "Chi tiết cơ sở giống",
+      //     breadcrumb: "Trung tâm xuất báo cáo",
       //   },
       // },
+
       {
         path: "*",
         element: <NotFoundPage />,
@@ -76,72 +192,3 @@ const router = createBrowserRouter([
 
 export default router;
 
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-// import MainLayout from "@/layouts/MainLayout";
-
-// import DashboardPage from "@/pages/Dashboard";
-
-// import LoginPage from "@/pages/Login";
-
-// import NotFoundPage from "@/pages/NotFound";
-
-// import ProtectedRoute from "./ProtectedRoute";
-
-// export default function AppRouter() {
-
-//   return (
-
-//     <BrowserRouter>
-
-//       <Routes>
-
-//         <Route
-
-//           path="/login"
-
-//           element={<LoginPage />}
-
-//         />
-
-//         <Route
-
-//           path="/"
-
-//           element={
-
-//             <ProtectedRoute>
-
-//               <MainLayout />
-
-//             </ProtectedRoute>
-
-//           }
-
-//         >
-
-//           <Route
-
-//             index
-
-//             element={<DashboardPage />}
-
-//           />
-
-//         </Route>
-
-//         <Route
-
-//           path="*"
-
-//           element={<NotFoundPage />}
-
-//         />
-
-//       </Routes>
-
-//     </BrowserRouter>
-
-//   );
-
-// }

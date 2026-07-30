@@ -9,10 +9,14 @@ export const COLORS = {
   /* ===========================
    * Brand
    * =========================== */
-  primary: "#006D77",
-  primaryHover: "#0A9396",
-  primaryActive: "#005F73",
-  primaryLight: "#E6F7F8",
+  // primary: "#006D77",
+  // primaryHover: "#0A9396",
+  // primaryActive: "#005F73",
+  // primaryLight: "#E6F7F8",
+  primary: "#52c41a",
+  primaryHover: "#73d13d",
+  primaryActive: "#389e0d",
+  primaryLight: "#f6ffed",
 
   secondary: "#3A86B8",
   secondaryLight: "#EAF5FB",

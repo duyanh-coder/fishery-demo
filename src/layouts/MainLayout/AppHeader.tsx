@@ -38,7 +38,9 @@ export default function AppHeader() {
 
   const navigate = useNavigate();
 
-  const isDetailPage = /^\/farm\/[^/]+$/.test(location.pathname);
+  // const isDetailPage = /^\/farm\/[^/]+$/.test(location.pathname);
+  const isDetailPage =
+    location.pathname.split("/").filter(Boolean).length === 2;
 
   const {
     token: {
@@ -117,7 +119,7 @@ export default function AppHeader() {
           items: ["Quản lý thủy sản", "Vùng nuôi"],
         };
 
-      case "/seed":
+      case "/hatchery":
         return {
           title: "Cơ sở giống",
           items: ["Quản lý thủy sản", "Cơ sở giống"],
@@ -141,19 +143,55 @@ export default function AppHeader() {
           items: ["Khai thác thủy sản", "Tàu cá"],
         };
 
+      case "/license":
+        return {
+          title: "Giấy phép",
+          items: ["Khai thác thủy sản", "Giấy phép"],
+        };
+
+      case "/inspection":
+        return {
+          title: "Đăng kiểm",
+          items: ["Khai thác thủy sản", "Đăng kiểm"],
+        };
+
+      case "/vms":
+        return {
+          title: "VMS",
+          items: ["Khai thác thủy sản", "VMS"],
+        };
+
       case "/monitoring":
         return {
           title: "Quan trắc môi trường",
           items: ["Quan trắc môi trường"],
         };
 
-      case "/gis":
+      case "/station":
         return {
-          title: "GIS",
-          items: ["GIS"],
+          title: "Điểm quan trắc",
+          items: ["Quan trắc môi trường", "Điểm quan trắc"],
         };
 
-      case "/report":
+      case "/water-quality":
+        return {
+          title: "Kết quả quan trắc",
+          items: ["Quan trắc môi trường", "Kết quả quan trắc"],
+        };
+
+      case "/environment-warning":
+        return {
+          title: "Cảnh báo",
+          items: ["Quan trắc môi trường", "Cảnh báo"],
+        };
+
+      case "/gis":
+        return {
+          title: "Bản đồ GIS",
+          items: ["Bản đồ GIS"],
+        };
+
+      case "/reports-dashboard":
         return {
           title: "Báo cáo",
           items: ["Báo cáo"],
@@ -175,9 +213,79 @@ export default function AppHeader() {
           title: <Link to="/">Dashboard</Link>,
         };
 
+      // Quản lý thủy sản
+
       case "Vùng nuôi":
         return {
           title: <Link to="/farm">Vùng nuôi</Link>,
+        };
+
+      case "Cơ sở giống":
+        return {
+          title: <Link to="/hatchery">Cơ sở giống</Link>,
+        };
+
+      case "Sản lượng":
+        return {
+          title: <Link to="/production">Sản lượng</Link>,
+        };
+
+      case "Dịch bệnh":
+        return {
+          title: <Link to="/disease">Dịch bệnh</Link>,
+        };
+
+      // Khai thác thủy sản
+
+      case "Tàu cá":
+        return {
+          title: <Link to="/vessel">Tàu cá</Link>,
+        };
+
+      case "Giấy phép":
+        return {
+          title: <Link to="/license">Giấy phép</Link>,
+        };
+
+      case "Đăng kiểm":
+        return {
+          title: <Link to="/inspection">Đăng kiểm</Link>,
+        };
+
+      case "VMS":
+        return {
+          title: <Link to="/vms">VMS</Link>,
+        };
+
+      // Quan trắc môi trường
+
+      case "Điểm quan trắc":
+        return {
+          title: <Link to="/station">Điểm quan trắc</Link>,
+        };
+
+      case "Kết quả quan trắc":
+        return {
+          title: <Link to="/water-quality">Kết quả quan trắc</Link>,
+        }
+
+      case "Cảnh báo":
+        return {
+          title: <Link to="/environment-warning">Cảnh báo</Link>,
+        }
+
+      // GIS
+
+      case "GIS":
+        return {
+          title: <Link to="/gis">Bản đồ GIS</Link>,
+        };
+
+      // Báo cáo
+
+      case "Báo cáo":
+        return {
+          title: <Link to="/reports-dashboard">Báo cáo</Link>,
         };
 
       default:
@@ -195,30 +303,46 @@ export default function AppHeader() {
         borderBottom: `1px solid ${colorBorderSecondary}`,
       }}
     >
-      <div>
-        <Space align="center">
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 4,
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 12,
+          }}
+        >
           {isDetailPage && (
             <Button
               type="text"
-
               icon={<ArrowLeftOutlined />}
-
               onClick={() => navigate(-1)}
             />
-             
           )}
 
           <Typography.Title
             level={4}
             style={{
               margin: 0,
+              lineHeight: 1,
               color: colorText,
             }}
           >
             {breadcrumb.title}
           </Typography.Title>
-        </Space>
-        <Breadcrumb items={breadcrumbItems} />
+        </div>
+
+        <Breadcrumb
+          items={breadcrumbItems}
+          style={{
+            margin: 0,
+          }}
+        />
       </div>
 
       <Space size="middle">

@@ -2,8 +2,15 @@ import {
   DashboardOutlined,
   AppstoreOutlined,
   EnvironmentOutlined,
+  ShopOutlined,
+  BarChartOutlined,
+  BugOutlined,
   CarOutlined,
+  RocketOutlined,
+  SafetyCertificateOutlined,
   RadarChartOutlined,
+  EnvironmentFilled,
+  AlertOutlined,
   GlobalOutlined,
   FileTextOutlined,
 } from "@ant-design/icons";
@@ -30,15 +37,18 @@ export const menuItems: MenuItem[] = [
         label: "Vùng nuôi",
       },
       {
-        key: "/seed",
+        key: "/hatchery",
+        icon: <ShopOutlined />,
         label: "Cơ sở giống",
       },
       {
         key: "/production",
+        icon: <BarChartOutlined />,
         label: "Sản lượng",
       },
       {
         key: "/disease",
+        icon: <BugOutlined />,
         label: "Dịch bệnh",
       },
     ],
@@ -51,18 +61,22 @@ export const menuItems: MenuItem[] = [
     children: [
       {
         key: "/vessel",
+        icon: <RocketOutlined />,
         label: "Tàu cá",
       },
       {
         key: "/license",
+        icon: <FileTextOutlined />,
         label: "Giấy phép",
       },
       {
         key: "/inspection",
+        icon: <SafetyCertificateOutlined />,
         label: "Đăng kiểm",
       },
       {
         key: "/vms",
+        icon: <RadarChartOutlined />,
         label: "VMS",
       },
     ],
@@ -75,14 +89,17 @@ export const menuItems: MenuItem[] = [
     children: [
       {
         key: "/station",
+        icon: <EnvironmentFilled />,
         label: "Điểm quan trắc",
       },
       {
-        key: "/result",
+        key: "/water-quality",
+        icon: <BarChartOutlined />,
         label: "Kết quả quan trắc",
       },
       {
-        key: "/warning",
+        key: "/environment-warning",
+        icon: <AlertOutlined />,
         label: "Cảnh báo",
       },
     ],
@@ -93,10 +110,21 @@ export const menuItems: MenuItem[] = [
     icon: <GlobalOutlined />,
     label: "GIS",
   },
-
   {
-    key: "/report",
-    icon: <FileTextOutlined />,
+    key: "reports",
+    icon: <RadarChartOutlined />,
     label: "Báo cáo",
-  },
+    children: [
+      {
+        key: "/reports-dashboard",
+        icon: <FileTextOutlined />,
+        label: "Dashboard",
+      },
+      {
+        key: "/reports-production",
+        icon: <FileTextOutlined />,
+        label: "Báo cáo sản lượng",
+      },
+    ],
+  }
 ];

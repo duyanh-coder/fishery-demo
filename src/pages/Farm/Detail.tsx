@@ -10,16 +10,13 @@ import WaterQualityCard from "./components/WaterQualityCard";
 import InspectionTable from "./components/InspectionTable";
 import ActivityTimeline from "./components/ActivityTimeline";
 
-import { ArrowLeftOutlined } from "@ant-design/icons";
-
-import { Button } from "antd";
-
-import { useNavigate } from "react-router-dom";
+// import { ArrowLeftOutlined } from "@ant-design/icons";
 
 const FarmDetail = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
   const farm = getFarmById(Number(id));
+
+  // console.log(farm);
 
   if (!farm) {
     return <>Không tìm thấy vùng nuôi.</>;
@@ -28,24 +25,15 @@ const FarmDetail = () => {
   return (
     <Row gutter={[16, 16]} align="stretch">
       <Col xs={24}>
-        {/* <Button
-          icon={<ArrowLeftOutlined />}
-
-          onClick={() => navigate(-1)}
-
-          style={{
-            marginBottom: 16,
-          }}
-        >
-          Quay lại
-        </Button> */}
       </Col>
       <Col xs={24} lg={10} style={{ display: "flex" }}>
         <FarmInfoCard farm={farm} />
       </Col>
 
       <Col xs={24} lg={14} style={{ display: "flex" }}>
-        <FarmMap location={farm.location} farmName={farm.name} />
+        <FarmMap 
+          farm={farm}
+        />
       </Col>
 
       <Col span={24}>

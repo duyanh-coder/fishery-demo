@@ -6,6 +6,7 @@ import type { GISMarker } from "@/types/dashboard";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 import "./style.scss";
+import { mapCard } from "@/theme/map";
 
 interface Props {
   markers: GISMarker[];
@@ -13,7 +14,7 @@ interface Props {
 
 const GISSection = ({ markers: markers }: Props) => {
   return (
-    <Card
+    <Card style={mapCard}
       title="Bản đồ GIS"
       className="gis-section"
       extra={<EnvironmentOutlined />}

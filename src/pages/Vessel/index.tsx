@@ -1,10 +1,6 @@
-import { Card, Col, Progress, Row, Space, Statistic, Table, Tag } from "antd";
+import { Card, Col, Row, Space, Statistic, Table, Tag } from "antd";
 
 import {
-  CarOutlined,
-  RadarChartOutlined,
-  WarningOutlined,
-  CheckCircleOutlined,
   DatabaseOutlined,
   RiseOutlined,
   LineChartOutlined,
@@ -14,13 +10,21 @@ import {
 import ReactECharts from "echarts-for-react";
 
 import { vesselTrend, vesselJob, warningVessels } from "./mock";
+import { statisticCard } from "@/theme/statistic";
+import {
+  panelHeaderStyle,
+  panelHeaderStyleInfo,
+  panelHeaderStyleSecondary,
+  panelHeaderStyleWarning,
+  panelStyle,
+} from "@/theme/panel";
 
 export default function VesselPage() {
   return (
     <Space orientation="vertical" size={24} style={{ width: "100%" }}>
       <Row gutter={16}>
         <Col span={6}>
-          <Card>
+          <Card style={statisticCard}>
             <Statistic
               title="Tổng tàu cá"
               value={1286}
@@ -30,7 +34,7 @@ export default function VesselPage() {
         </Col>
 
         <Col span={6}>
-          <Card>
+          <Card style={statisticCard}>
             <Statistic
               title="Đang hoạt động"
               value={1143}
@@ -40,7 +44,7 @@ export default function VesselPage() {
         </Col>
 
         <Col span={6}>
-          <Card>
+          <Card style={statisticCard}>
             <Statistic
               title="Đang ngoài khơi"
               value={724}
@@ -50,7 +54,7 @@ export default function VesselPage() {
         </Col>
 
         <Col span={6}>
-          <Card>
+          <Card style={statisticCard}>
             <Statistic
               title="Cảnh báo"
               value={18}
@@ -61,7 +65,11 @@ export default function VesselPage() {
       </Row>
       <Row gutter={16}>
         <Col span={16}>
-          <Card title="Sản lượng khai thác theo tháng">
+          <Card
+            {...panelHeaderStyle}
+            style={panelStyle}
+            title="Sản lượng khai thác theo tháng"
+          >
             <ReactECharts
               style={{ height: 360 }}
               option={{
@@ -87,7 +95,11 @@ export default function VesselPage() {
         </Col>
 
         <Col span={8}>
-          <Card title="Cơ cấu nghề khai thác">
+          <Card
+            {...panelHeaderStyleSecondary}
+            style={panelStyle}
+            title="Cơ cấu nghề khai thác"
+          >
             <ReactECharts
               style={{ height: 360 }}
               option={{
@@ -110,8 +122,12 @@ export default function VesselPage() {
 
       <Row gutter={16}>
         <Col span={8}>
-          <Card title="Hiệu quả khai thác">
-            <Space direction="vertical" style={{ width: "100%" }} size={20}>
+          <Card
+            {...panelHeaderStyleInfo}
+            style={panelStyle}
+            title="Hiệu quả khai thác"
+          >
+            <Space orientation="vertical" style={{ width: "100%" }} size={20}>
               <Statistic title="Chuyến biển hoàn thành" value={94} suffix="%" />
 
               <Statistic title="Hiệu suất khai thác" value={82} suffix="%" />
@@ -122,7 +138,11 @@ export default function VesselPage() {
         </Col>
 
         <Col span={16}>
-          <Card title="Các tàu cần theo dõi">
+          <Card
+            {...panelHeaderStyleWarning}
+            style={panelStyle}
+            title="Các tàu cần theo dõi"
+          >
             <Table
               rowKey="id"
 
@@ -172,7 +192,6 @@ export default function VesselPage() {
           </Card>
         </Col>
       </Row>
-      
     </Space>
   );
 }

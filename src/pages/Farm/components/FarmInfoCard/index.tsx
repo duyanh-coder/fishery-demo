@@ -9,6 +9,8 @@ import {
 import type { Farm } from "../../types";
 
 import "./style.scss";
+import { cardStyle } from "@/theme/card";
+import { panelHeaderStyle } from "@/theme/panel";
 
 const { Title, Text } = Typography;
 
@@ -38,6 +40,8 @@ const FarmInfoCard = ({ farm }: FarmInfoCardProps) => {
         <Card
             className="farm-info-card"
             title="Thông tin vùng nuôi"
+            {...panelHeaderStyle}
+            style={cardStyle}
         >
             <Space
                 orientation="vertical"
@@ -75,8 +79,8 @@ const FarmInfoCard = ({ farm }: FarmInfoCardProps) => {
                     {farm.address}
                 </Descriptions.Item>
 
-                <Descriptions.Item label="Quận/Huyện">
-                    {farm.district}
+                <Descriptions.Item label="Phường/Xã">
+                    {farm.ward}
                 </Descriptions.Item>
 
                 <Descriptions.Item label="Loài nuôi">

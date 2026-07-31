@@ -8,7 +8,7 @@ export interface Station {
 
     province:string;
 
-    district:string;
+    ward:string;
 
     waterType:string;
 

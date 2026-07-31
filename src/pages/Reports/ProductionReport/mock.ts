@@ -64,7 +64,7 @@ export const tableData: ProductionTable[] = [
     {
         id: 1,
         province: "Cà Mau",
-        district: "Đầm Dơi",
+        ward: "Đầm Dơi",
         species: "Tôm sú",
         area: 120,
         production: 620,
@@ -74,7 +74,7 @@ export const tableData: ProductionTable[] = [
     {
         id: 2,
         province: "Kiên Giang",
-        district: "An Biên",
+        ward: "An Biên",
         species: "Cá tra",
         area: 85,
         production: 410,

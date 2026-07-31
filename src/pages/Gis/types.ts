@@ -2,7 +2,7 @@ export interface GISMarker {
     id: number;
     station: string;
     province: string;
-    district: string;
+    ward: string;
     lat: number;
     lng: number;
     status: "Tốt" | "Theo dõi" | "Cảnh báo";

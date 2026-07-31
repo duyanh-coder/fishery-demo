@@ -33,6 +33,13 @@ import StationDetailDrawer from "./components/StationDetailDrawer";
 
 import { stations } from "./mock";
 import { useState } from "react";
+import { statisticCard } from "@/theme/statistic";
+import {
+  panelHeaderStyle,
+  panelHeaderStyleInfo,
+  panelHeaderStyleSecondary,
+  panelStyle,
+} from "@/theme/panel";
 
 const { Search } = Input;
 
@@ -45,7 +52,7 @@ export default function StationPage() {
     { title: "Điểm quan trắc", dataIndex: "name" },
     {
       title: "Địa phương",
-      render: (_: any, r: any) => `${r.district}, ${r.province}`,
+      render: (_: any, r: any) => `${r.ward}, ${r.province}`,
     },
     { title: "Nguồn nước", dataIndex: "waterType" },
     { title: "Thiết bị", dataIndex: "device" },
@@ -68,7 +75,14 @@ export default function StationPage() {
       width: 160,
       render: (_: any, row: any) => (
         <Space>
-          <Button type="text" icon={<EyeOutlined />} onClick={() => { setSelectedStation(row); setOpenDetail(true); }} />
+          <Button
+            type="text"
+            icon={<EyeOutlined />}
+            onClick={() => {
+              setSelectedStation(row);
+              setOpenDetail(true);
+            }}
+          />
           <Button type="text" icon={<EnvironmentOutlined />} />
           <Button type="text" icon={<EditOutlined />} />
           <Button type="text" icon={<MoreOutlined />} />
@@ -78,10 +92,10 @@ export default function StationPage() {
   ];
 
   return (
-    <Space direction="vertical" size={20} style={{ width: "100%" }}>
+    <Space orientation="vertical" size={20} style={{ width: "100%" }}>
       <Row gutter={16}>
         <Col span={6}>
-          <Card>
+          <Card style={statisticCard}>
             <Statistic
               title="Tổng điểm"
               value={180}
@@ -90,7 +104,7 @@ export default function StationPage() {
           </Card>
         </Col>
         <Col span={6}>
-          <Card>
+          <Card style={statisticCard}>
             <Statistic
               title="Hoạt động"
               value={172}
@@ -99,12 +113,12 @@ export default function StationPage() {
           </Card>
         </Col>
         <Col span={6}>
-          <Card>
+          <Card style={statisticCard}>
             <Statistic title="Bảo trì" value={5} prefix={<ToolOutlined />} />
           </Card>
         </Col>
         <Col span={6}>
-          <Card>
+          <Card style={statisticCard}>
             <Statistic
               title="Mất kết nối"
               value={3}
@@ -117,8 +131,8 @@ export default function StationPage() {
       <Card>
         <Row justify="space-between">
           <Space wrap>
-            <Select placeholder="Tỉnh" style={{ width: 150 }} />
-            <Select placeholder="Huyện" style={{ width: 150 }} />
+            <Select placeholder="Tỉnh/TP" style={{ width: 150 }} />
+            <Select placeholder="Phường/Xã" style={{ width: 150 }} />
             <Select placeholder="Nguồn nước" style={{ width: 160 }} />
             <Select placeholder="Trạng thái" style={{ width: 160 }} />
             <Search
@@ -144,12 +158,14 @@ export default function StationPage() {
             key: "1",
             label: "Danh sách",
             children: (
-              <Table
-                rowKey="id"
-                columns={columns}
-                dataSource={stations}
-                pagination={{ pageSize: 10 }}
-              />
+              <Card style={panelStyle}>
+                <Table
+                  rowKey="id"
+                  columns={columns}
+                  dataSource={stations}
+                  pagination={{ pageSize: 10 }}
+                />
+              </Card>
             ),
           },
 
@@ -157,7 +173,14 @@ export default function StationPage() {
             key: "2",
             label: "Bản đồ",
             children: (
-              <div style={{ height: 650, padding: 16, background: "#fff" }}>
+              <div
+                style={{
+                  ...panelStyle,
+                  height: 650,
+                  padding: 16,
+                  background: "#fff",
+                }}
+              >
                 <div
                   style={{
                     width: "100%",
@@ -258,28 +281,30 @@ export default function StationPage() {
             key: "3",
             label: "Thiết bị",
             children: (
-              <Table
-                rowKey="id"
-                pagination={false}
-                dataSource={stations}
-                columns={[
-                  { title: "Thiết bị", dataIndex: "device" },
-                  { title: "Điểm", dataIndex: "name" },
-                  { title: "Firmware", render: () => "v2.1.3" },
-                  {
-                    title: "Pin",
-                    render: () => <Progress percent={92} size="small" />,
-                  },
-                  {
-                    title: "Tín hiệu",
-                    render: () => <Progress percent={81} size="small" />,
-                  },
-                  {
-                    title: "Kết nối",
-                    render: () => <Badge status="success" text="Online" />,
-                  },
-                ]}
-              />
+              <Card style={panelStyle}>
+                <Table
+                  rowKey="id"
+                  pagination={false}
+                  dataSource={stations}
+                  columns={[
+                    { title: "Thiết bị", dataIndex: "device" },
+                    { title: "Điểm", dataIndex: "name" },
+                    { title: "Firmware", render: () => "v2.1.3" },
+                    {
+                      title: "Pin",
+                      render: () => <Progress percent={92} size="small" />,
+                    },
+                    {
+                      title: "Tín hiệu",
+                      render: () => <Progress percent={81} size="small" />,
+                    },
+                    {
+                      title: "Kết nối",
+                      render: () => <Badge status="success" text="Online" />,
+                    },
+                  ]}
+                />
+              </Card>
             ),
           },
           {
@@ -288,7 +313,11 @@ export default function StationPage() {
             children: (
               <Row gutter={16}>
                 <Col span={12}>
-                  <Card title="Theo tỉnh">
+                  <Card
+                    {...panelHeaderStyle}
+                    style={panelStyle}
+                    title="Theo tỉnh/TP"
+                  >
                     <ReactECharts
                       style={{ height: 350 }}
                       option={{
@@ -310,7 +339,11 @@ export default function StationPage() {
                 </Col>
 
                 <Col span={12}>
-                  <Card title="Theo nguồn nước">
+                  <Card
+                    {...panelHeaderStyleSecondary}
+                    style={panelStyle}
+                    title="Theo nguồn nước"
+                  >
                     <ReactECharts
                       style={{ height: 350 }}
                       option={{
@@ -338,7 +371,11 @@ export default function StationPage() {
             key: "5",
             label: "Lịch sử",
             children: (
-              <Card title="Lịch sử hoạt động">
+              <Card
+                {...panelHeaderStyleInfo}
+                style={panelStyle}
+                title="Lịch sử hoạt động"
+              >
                 <Timeline
                   items={[
                     {
@@ -378,8 +415,5 @@ export default function StationPage() {
         onClose={() => setOpenDetail(false)}
       />
     </Space>
-
   );
-
 }
-

@@ -7,6 +7,7 @@ import {
 } from "@ant-design/icons";
 
 import { farmList } from "../../../mock/farm";
+import { statisticCard } from "@/theme/statistic";
 
 const FarmStatistic = () => {
 
@@ -30,7 +31,7 @@ const FarmStatistic = () => {
         <Row gutter={[16, 16]}>
 
             <Col xs={24} sm={12} lg={6}>
-                <Card>
+                <Card style={statisticCard}>
                     <Statistic
                         title="Tổng vùng nuôi"
                         value={totalFarm}
@@ -40,7 +41,7 @@ const FarmStatistic = () => {
             </Col>
 
             <Col xs={24} sm={12} lg={6}>
-                <Card>
+                <Card style={statisticCard}>
                     <Statistic
                         title="Diện tích (ha)"
                         value={totalArea}
@@ -51,7 +52,7 @@ const FarmStatistic = () => {
             </Col>
 
             <Col xs={24} sm={12} lg={6}>
-                <Card>
+                <Card style={statisticCard}>
                     <Statistic
                         title="Sản lượng (tấn)"
                         value={totalProduction}
@@ -62,7 +63,7 @@ const FarmStatistic = () => {
             </Col>
 
             <Col xs={24} sm={12} lg={6}>
-                <Card>
+                <Card style={statisticCard}>
                     <Statistic
                         title="Đang hoạt động"
                         value={totalActive}

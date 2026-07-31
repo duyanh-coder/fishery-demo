@@ -22,6 +22,8 @@ import {
     diseaseTrend,
     diseasePie,
 } from "./mock";
+import { statisticCard } from "@/theme/statistic";
+import { panelHeaderStyle, panelHeaderStyleSecondary, panelHeaderStyleSuccess, panelHeaderStyleWarning, panelStyle } from "@/theme/panel";
 
 export default function DiseasePage() {
 
@@ -36,7 +38,7 @@ export default function DiseasePage() {
             <Row gutter={16}>
 
                 <Col span={6}>
-                    <Card>
+                    <Card style={statisticCard}>
                         <Statistic
                             title="Ca bệnh"
                             value={193}
@@ -46,7 +48,7 @@ export default function DiseasePage() {
                 </Col>
 
                 <Col span={6}>
-                    <Card>
+                    <Card style={statisticCard}>
                         <Statistic
                             title="Đang xử lý"
                             value={37}
@@ -56,7 +58,7 @@ export default function DiseasePage() {
                 </Col>
 
                 <Col span={6}>
-                    <Card>
+                    <Card style={statisticCard}>
                         <Statistic
                             title="Đã khống chế"
                             value={156}
@@ -66,7 +68,7 @@ export default function DiseasePage() {
                 </Col>
 
                 <Col span={6}>
-                    <Card>
+                    <Card style={statisticCard}>
                         <Statistic
                             title="An toàn"
                             value={96.8}
@@ -82,7 +84,11 @@ export default function DiseasePage() {
 
                 <Col span={16}>
 
-                    <Card title="Diễn biến dịch bệnh">
+                    <Card 
+                        title="Diễn biến dịch bệnh"
+                        {...panelHeaderStyle}
+                        style={panelStyle}
+                    >
 
                         <ReactECharts
                             style={{ height: 350 }}
@@ -112,7 +118,11 @@ export default function DiseasePage() {
 
                 <Col span={8}>
 
-                    <Card title="Cơ cấu bệnh">
+                    <Card 
+                        title="Cơ cấu bệnh"
+                        {...panelHeaderStyleSecondary}
+                        style={panelStyle}
+                    >
 
                         <ReactECharts
                             style={{ height: 350 }}
@@ -141,10 +151,14 @@ export default function DiseasePage() {
 
                 <Col span={8}>
 
-                    <Card title="Mức độ kiểm soát">
+                    <Card 
+                        title="Mức độ kiểm soát"
+                        {...panelHeaderStyleSuccess}
+                        style={panelStyle}
+                    >
 
                         <Space
-                            direction="vertical"
+                            orientation="vertical"
                             style={{ width: "100%" }}
                         >
 
@@ -179,7 +193,11 @@ export default function DiseasePage() {
 
                 <Col span={16}>
 
-                    <Card title="Các ổ dịch gần đây">
+                    <Card 
+                        title="Các ổ dịch gần đây"
+                        {...panelHeaderStyleWarning}
+                        style={panelStyle}
+                    >
 
                         <Table
 

@@ -9,18 +9,16 @@ import {
   dashboardSummary,
   productionChart,
   aquacultureChart,
-  gisMarkers,
   iuuAlerts,
-  recentActivities,
 } from "@/mock/dashboard";
 import ProductionChart from "@/components/dashboard/ProductionChart";
 import AquacultureChart from "@/components/dashboard/AquacultureChart";
-import GISSection from "@/components/dashboard/GISSection";
 import IUUAlertPanel from "@/components/dashboard/IUUAlertPanel";
 
 import GISMap from "@/components/gis/GISMap";
 
 import { farms, ports, stations, vessels, warnings } from "@/mock/gis";
+import { SPACING } from "@/theme";
 
 const DashboardPage = () => {
   return (
@@ -35,17 +33,18 @@ const DashboardPage = () => {
       <Row gutter={[20, 20]}>
         <Col
           span={12}
+          style= {{marginBottom: SPACING.lg}}
         >
           <ProductionChart data={productionChart} />
         </Col>
 
-        <Col span={12}>
+        <Col span={12} style= {{marginBottom: SPACING.lg}}>
           <AquacultureChart data={aquacultureChart} />
         </Col>
       </Row>
 
       <Row gutter={[20, 20]}>
-        <Col span={16}>
+        <Col span={16} style= {{marginBottom: SPACING.lg}}>
           <GISMap
             farms={farms}
             ports={ports}
@@ -54,16 +53,11 @@ const DashboardPage = () => {
             warnings={warnings}
           />
         </Col>
-        {/* <Col span={16}>
-          <GISSection markers={gisMarkers} />
-        </Col> */}
-
-        <Col span={8}>
+        <Col span={8} style= {{marginBottom: SPACING.lg}}>
           <IUUAlertPanel alerts={iuuAlerts} />
         </Col>
       </Row>
-
-      {/* <RecentActivity data={recentActivities} /> */}
+      
     </PageContainer>
   );
 };

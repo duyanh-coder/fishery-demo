@@ -50,12 +50,12 @@ export default function WaterQualityDetailDrawer({ open, data, onClose }: Props)
                     {data?.measureTime}
                 </Descriptions.Item>
 
-                <Descriptions.Item label="Tỉnh">
+                <Descriptions.Item label="Tỉnh/TP">
                     {data?.province}
                 </Descriptions.Item>
 
-                <Descriptions.Item label="Huyện">
-                    {data?.district}
+                <Descriptions.Item label="Phường/Xã">
+                    {data?.ward}
                 </Descriptions.Item>
 
                 <Descriptions.Item label="Nguồn nước">

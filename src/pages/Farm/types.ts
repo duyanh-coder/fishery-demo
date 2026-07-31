@@ -15,7 +15,7 @@ export interface Farm {
     phone: string;
     address: string;
 
-    district: string;
+    ward: string;
     species: string;
 
     area: number;

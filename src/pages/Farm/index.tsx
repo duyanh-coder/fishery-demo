@@ -25,7 +25,7 @@ export default function FarmPage() {
         return false;
       }
 
-      if (filter.district && item.district !== filter.district) {
+      if (filter.ward && item.ward !== filter.ward) {
         return false;
       }
 

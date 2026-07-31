@@ -4,6 +4,7 @@ import { Card } from "antd";
 import "./style.scss";
 import type { ProductionChartItem } from "@/types/dashboard";
 import { getProductionChartOption } from "./option";
+import { panelHeaderStyle, panelStyle } from "@/theme/panel";
 
 interface Props {
   data: ProductionChartItem[];
@@ -11,7 +12,12 @@ interface Props {
 
 const ProductionChart = ({ data }: Props) => {
   return (
-    <Card title="Sản lượng thủy sản theo tháng" className="production-chart">
+    <Card
+      title="Sản lượng thủy sản theo tháng"
+      className="production-chart"
+      {...panelHeaderStyle}
+      style={panelStyle}
+    >
       <ReactECharts
         option={getProductionChartOption(data)}
         opts={{

@@ -54,12 +54,12 @@ export default function StationPopup({ data }: Props) {
                 column={1}
             >
 
-                <Descriptions.Item label="Tỉnh">
+                <Descriptions.Item label="Tỉnh/TP">
                     {data.province}
                 </Descriptions.Item>
 
-                <Descriptions.Item label="Huyện">
-                    {data.district}
+                <Descriptions.Item label="Phường/Xã">
+                    {data.ward}
                 </Descriptions.Item>
 
                 <Descriptions.Item

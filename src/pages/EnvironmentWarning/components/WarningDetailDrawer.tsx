@@ -2,6 +2,7 @@ import { Card, Col, Descriptions, Divider, Drawer, Progress, Row, Space, Statist
 import { AlertOutlined, CheckCircleOutlined, ClockCircleOutlined, FireOutlined, HistoryOutlined, UserOutlined, WarningOutlined } from "@ant-design/icons";
 
 import { history } from "../mock";
+import { statisticCard } from "@/theme/statistic";
 
 interface Props {
     open: boolean;
@@ -20,7 +21,7 @@ export default function WarningDetailDrawer({ open, data, onClose }: Props) {
             <Row gutter={16}>
 
                 <Col span={6}>
-                    <Card>
+                    <Card style={statisticCard}>
                         <Statistic
                             title="Mức độ"
                             value={data?.level}
@@ -30,7 +31,7 @@ export default function WarningDetailDrawer({ open, data, onClose }: Props) {
                 </Col>
 
                 <Col span={6}>
-                    <Card>
+                    <Card style={statisticCard}>
                         <Statistic
                             title="Giá trị đo"
                             value={data?.value}
@@ -39,7 +40,7 @@ export default function WarningDetailDrawer({ open, data, onClose }: Props) {
                 </Col>
 
                 <Col span={6}>
-                    <Card>
+                    <Card style={statisticCard}>
                         <Statistic
                             title="Ngưỡng"
                             value={data?.threshold}
@@ -48,7 +49,7 @@ export default function WarningDetailDrawer({ open, data, onClose }: Props) {
                 </Col>
 
                 <Col span={6}>
-                    <Card>
+                    <Card style={statisticCard}>
                         <Statistic
                             title="Trạng thái"
                             value={data?.status}
@@ -73,12 +74,12 @@ export default function WarningDetailDrawer({ open, data, onClose }: Props) {
                     {data?.warningTime}
                 </Descriptions.Item>
 
-                <Descriptions.Item label="Tỉnh">
+                <Descriptions.Item label="Tỉnh/TP">
                     {data?.province}
                 </Descriptions.Item>
 
-                <Descriptions.Item label="Huyện">
-                    {data?.district}
+                <Descriptions.Item label="Phường/Xã">
+                    {data?.ward}
                 </Descriptions.Item>
 
                 <Descriptions.Item label="Loại cảnh báo">
@@ -128,7 +129,7 @@ export default function WarningDetailDrawer({ open, data, onClose }: Props) {
             <Row gutter={16}>
 
                 <Col span={6}>
-                    <Card>
+                    <Card style={statisticCard}>
                         <Statistic
                             title="Giá trị đo"
                             value={data?.value}
@@ -137,7 +138,7 @@ export default function WarningDetailDrawer({ open, data, onClose }: Props) {
                 </Col>
 
                 <Col span={6}>
-                    <Card>
+                    <Card style={statisticCard}>
                         <Statistic
                             title="Ngưỡng"
                             value={data?.threshold}
@@ -146,7 +147,7 @@ export default function WarningDetailDrawer({ open, data, onClose }: Props) {
                 </Col>
 
                 <Col span={6}>
-                    <Card>
+                    <Card style={statisticCard}>
                         <Statistic
                             title="Chênh lệch"
                             value={(data?.value || 0) - (data?.threshold || 0)}
@@ -156,7 +157,7 @@ export default function WarningDetailDrawer({ open, data, onClose }: Props) {
                 </Col>
 
                 <Col span={6}>
-                    <Card>
+                    <Card style={statisticCard}>
                         <Statistic
                             title="Vượt ngưỡng"
                             value={((data?.value || 0) / (data?.threshold || 1) * 100).toFixed(0)}

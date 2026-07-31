@@ -29,12 +29,12 @@ export const routeConfig = [
     title: "Dashboard",
   },
 
-  {
-    path: "/farm",
-    element: <FarmPage />
-  },
-  {
-    path: "/farm/:id",
-    element: <FarmDetail />,
-},
+  // {
+  //   path: "/farm",
+  //   element: <FarmPage />,
+  // },
+  // {
+  //   path: "/farm/:id",
+  //   element: <FarmDetail />,
+  // },
 ];

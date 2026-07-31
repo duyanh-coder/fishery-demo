@@ -7,6 +7,7 @@ import { Card, Col, Statistic, Tag } from "antd";
 
 import "./style.scss";
 import type { DashboardKPI } from "@/types/dashboard";
+import { statisticCard } from "@/theme/statistic";
 
 interface Props {
     item: DashboardKPI;
@@ -46,6 +47,7 @@ const KPICard = ({ item }: Props) => {
             xl={4}
         >
             <Card
+                style={statisticCard}
                 hoverable
                 className="kpi-card"
             >

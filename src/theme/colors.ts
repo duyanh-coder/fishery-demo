@@ -9,14 +9,14 @@ export const COLORS = {
   /* ===========================
    * Brand
    * =========================== */
-  // primary: "#006D77",
-  // primaryHover: "#0A9396",
-  // primaryActive: "#005F73",
-  // primaryLight: "#E6F7F8",
-  primary: "#52c41a",
-  primaryHover: "#73d13d",
-  primaryActive: "#389e0d",
-  primaryLight: "#f6ffed",
+  primary: "#006D77",
+  primaryHover: "#0A9396",
+  primaryActive: "#005F73",
+  primaryLight: "#E6F7F8",
+  // primary: "#52c41a",
+  // primaryHover: "#73d13d",
+  // primaryActive: "#389e0d",
+  // primaryLight: "#f6ffed",
 
   secondary: "#3A86B8",
   secondaryLight: "#EAF5FB",
@@ -66,7 +66,8 @@ export const COLORS = {
   /* ===========================
    * Border
    * =========================== */
-  border: "#E5E7EB",
+  // border: "#E5E7EB",
+  border: "#A0A0A0",
   divider: "#F0F0F0",
 
   /* ===========================

@@ -17,6 +17,7 @@ import {
 
 import type { Farm } from "@/types/farm";
 import { useNavigate } from "react-router-dom";
+import { panelStyle } from "@/theme/panel";
 
 interface Props {
     data: Farm[];
@@ -48,7 +49,7 @@ export default function FarmTable({ data }: Props) {
 
         {
             title: "Địa bàn",
-            dataIndex: "district",
+            dataIndex: "ward",
         },
 
         {
@@ -134,7 +135,7 @@ export default function FarmTable({ data }: Props) {
 
     return (
 
-        <Card style={{ marginTop: 16 }}>
+        <Card style={panelStyle} >
 
             <Table<Farm>
 

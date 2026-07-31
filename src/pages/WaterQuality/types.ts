@@ -2,7 +2,7 @@ export interface WaterQuality{
     id:number;
     station:string;
     province:string;
-    district:string;
+    ward:string;
     waterType:string;
     measureTime:string;
     ph:number;

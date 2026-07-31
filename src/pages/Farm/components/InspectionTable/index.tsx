@@ -3,6 +3,7 @@ import { Card, Table, Tag } from "antd";
 import type { ColumnsType } from "antd/es/table";
 
 import type { Inspection } from "../../types";
+import { panelHeaderStyleWarning, panelStyle } from "@/theme/panel";
 
 interface Props {
     data: Inspection[];
@@ -43,7 +44,7 @@ export default function InspectionTable({
 
     return (
 
-        <Card title="Lịch sử kiểm tra">
+        <Card title="Lịch sử kiểm tra" {...panelHeaderStyleWarning} style={panelStyle}>
 
             <Table
                 rowKey="id"

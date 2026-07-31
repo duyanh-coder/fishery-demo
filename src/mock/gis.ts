@@ -53,7 +53,7 @@ export const ports: GISPort[] = [
         name: "Cảng Cá Trần Đề",
         latitude: 9.4982,
         longitude: 106.2051,
-        address: "Huyện Trần Đề, Sóc Trăng",
+        address: "Xã Trần Đề, Sóc Trăng",
         capacity: 220,
         vessels: 96,
         status: "Đang hoạt động"

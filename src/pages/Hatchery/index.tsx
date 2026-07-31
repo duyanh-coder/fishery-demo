@@ -21,6 +21,8 @@ import {
 } from "@ant-design/icons";
 
 import { getHatcheryList } from "./service";
+import { statisticCard } from "@/theme/statistic";
+import { panelStyle } from "@/theme/panel";
 
 export default function HatcheryList() {
 
@@ -30,7 +32,7 @@ export default function HatcheryList() {
 
     return (
         <Space
-            direction="vertical"
+            orientation="vertical"
             size={24}
             style={{ width: "100%" }}
         >
@@ -38,7 +40,7 @@ export default function HatcheryList() {
             <Row gutter={16}>
 
                 <Col span={6}>
-                    <Card>
+                    <Card style={statisticCard}>
                         <Statistic
                             title="Cơ sở giống"
                             value={128}
@@ -48,7 +50,7 @@ export default function HatcheryList() {
                 </Col>
 
                 <Col span={6}>
-                    <Card>
+                    <Card style={statisticCard}>
                         <Statistic
                             title="Công suất (triệu con)"
                             value={326}
@@ -58,7 +60,7 @@ export default function HatcheryList() {
                 </Col>
 
                 <Col span={6}>
-                    <Card>
+                    <Card style={statisticCard}>
                         <Statistic
                             title="Đạt chuẩn"
                             value={98.5}
@@ -69,7 +71,7 @@ export default function HatcheryList() {
                 </Col>
 
                 <Col span={6}>
-                    <Card>
+                    <Card style={statisticCard}>
                         <Statistic
                             title="Đang hoạt động"
                             value={116}
@@ -79,7 +81,7 @@ export default function HatcheryList() {
 
             </Row>
 
-            <Card>
+            <Card style={panelStyle}>
 
                 <Row gutter={16}>
 
@@ -90,7 +92,7 @@ export default function HatcheryList() {
                     <Col span={6}>
                         <Select
                             style={{ width: "100%" }}
-                            placeholder="Quận/Huyện"
+                            placeholder="Phường/Xã"
                         />
                     </Col>
 
@@ -105,7 +107,7 @@ export default function HatcheryList() {
 
             </Card>
 
-            <Card>
+            <Card style={panelStyle}>
 
                 <Table
 

@@ -10,6 +10,7 @@ import {
 import type { WaterQuality } from "../../types";
 
 import "./style.scss";
+import { panelHeaderStyleSecondary, panelStyle } from "@/theme/panel";
 
 interface Props {
     data: WaterQuality;
@@ -21,7 +22,9 @@ export default function WaterQualityCard({
 
     return (
 
-        <Card
+        <Card 
+            {...panelHeaderStyleSecondary}
+            style={panelStyle}
             title="Chất lượng nước"
             className="water-quality-card"
         >

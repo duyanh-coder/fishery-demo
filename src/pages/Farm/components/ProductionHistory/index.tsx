@@ -5,6 +5,7 @@ import ReactECharts from "echarts-for-react";
 import buildOption from "./option";
 
 import type { ProductionHistoryItem } from "../../types";
+import { panelHeaderStyleInfo, panelStyle } from "@/theme/panel";
 
 interface Props {
     data: ProductionHistoryItem[];
@@ -16,7 +17,11 @@ export default function ProductionHistory({
 
     return (
 
-        <Card title="Biểu đồ sản lượng">
+        <Card 
+            title="Biểu đồ sản lượng" 
+            {...panelHeaderStyleInfo}
+            style={panelStyle}
+        >
 
             <ReactECharts
                 option={buildOption(data)}

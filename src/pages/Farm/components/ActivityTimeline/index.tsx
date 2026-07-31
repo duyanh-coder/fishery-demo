@@ -12,6 +12,7 @@ import {
 } from "@ant-design/icons";
 
 import type { Activity } from "../../types";
+import { panelHeaderStyleInfo, panelStyle } from "@/theme/panel";
 
 interface Props {
     data: Activity[];
@@ -43,7 +44,7 @@ export default function ActivityTimeline({
 
     return (
 
-        <Card title="Lịch sử hoạt động">
+        <Card title="Lịch sử hoạt động" {...panelHeaderStyleInfo} style={panelStyle}>
 
             <Timeline
 

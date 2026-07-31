@@ -8,6 +8,7 @@ export default function AppLogo() {
         color: "#fff",
         margin: 0,
       }}
+      
     >
       HỆ THỐNG THỦY SẢN
     </Typography.Title>

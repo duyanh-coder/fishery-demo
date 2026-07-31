@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 import router from "./router";
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
+import { COLORS } from "./theme";
 
 function AppContent() {
   const { theme: mode } = useTheme();
@@ -16,14 +17,21 @@ function AppContent() {
     <ConfigProvider
       theme={{
         algorithm:
-          mode === "dark"
-            ? theme.darkAlgorithm
-            : theme.defaultAlgorithm,
+          mode === "dark" ? theme.darkAlgorithm : theme.defaultAlgorithm,
         token: {
-            fontFamily:
-                '"Inter", "Segoe UI", Roboto, Arial, sans-serif',
+          fontFamily: '"Inter", "Segoe UI", Roboto, Arial, sans-serif',
+          colorPrimary: COLORS.primary,
         },
-      }}      
+        components: {
+          Menu: {
+            itemSelectedBg: COLORS.primaryLight,
+            itemSelectedColor: COLORS.primary,
+            itemHoverColor: COLORS.primary,
+            itemHoverBg: COLORS.primaryLight,
+            itemActiveBg: COLORS.primaryLight,
+          },
+        },
+      }}
     >
       <RouterProvider router={router} />
     </ConfigProvider>

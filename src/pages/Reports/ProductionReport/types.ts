@@ -40,7 +40,7 @@ export interface ProductionTable {
 
     province: string;
 
-    district: string;
+    ward: string;
 
     species: string;
 

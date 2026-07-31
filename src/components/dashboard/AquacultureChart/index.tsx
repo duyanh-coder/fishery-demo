@@ -6,6 +6,7 @@ import type { AquacultureChartItem } from "@/types/dashboard";
 import { getAquacultureChartOption } from "./option";
 
 import "./style.scss";
+import { panelHeaderStyleSecondary, panelStyle } from "@/theme/panel";
 
 interface Props {
     data: AquacultureChartItem[];
@@ -14,6 +15,8 @@ interface Props {
 const AquacultureChart = ({ data }: Props) => {
     return (
         <Card
+            {...panelHeaderStyleSecondary}
+            style={panelStyle}
             title="Diện tích nuôi trồng"
             className="aquaculture-chart"
         >

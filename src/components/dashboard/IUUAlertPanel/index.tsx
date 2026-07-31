@@ -5,6 +5,7 @@ const { Text } = Typography;
 import type { IUUAlert } from "@/types/dashboard";
 
 import "./style.scss";
+import { panelHeaderStyleWarning, panelStyle } from "@/theme/panel";
 
 interface Props {
   alerts: IUUAlert[];
@@ -12,10 +13,15 @@ interface Props {
 
 const IUUAlertPanel = ({ alerts }: Props) => {
   return (
-    <Card title="Cảnh báo IUU" className="iuu-panel">
+    <Card 
+      title="Cảnh báo IUU"
+      className="iuu-panel"
+      {...panelHeaderStyleWarning}
+      style={panelStyle}
+    >
       <Space orientation="vertical" style={{ width: "100%" }} size="middle">
-        {alerts.map((item) => (
-          <Card key={item.id} size="small">
+        {alerts.map((item: any) => (
+          <Card  key={item.id} size="small">
             <Space
               style={{
                 width: "100%",

@@ -3,7 +3,7 @@ export interface Farm {
     code: string;
     name: string;
 
-    district: string;
+    ward: string;
     species: string;
     area: number;
     production: number;
@@ -14,7 +14,7 @@ export interface Farm {
 
 export interface FarmFilter {
     keyword: string;
-    district?: string;
+    ward?: string;
     species?: string;
     status?: "active" | "inactive";
 }

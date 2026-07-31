@@ -15,15 +15,23 @@ import {
   inspectionResult,
   inspectionWarnings,
 } from "./mock";
+import { statisticCard } from "@/theme/statistic";
+import {
+  panelHeaderStyle,
+  panelHeaderStyleSecondary,
+  panelHeaderStyleSuccess,
+  panelHeaderStyleWarning,
+  panelStyle,
+} from "@/theme/panel";
 
 export default function InspectionPage() {
   return (
-    <Space direction="vertical" size={24} style={{ width: "100%" }}>
+    <Space orientation="vertical" size={24} style={{ width: "100%" }}>
       {/* KPI */}
 
       <Row gutter={16}>
         <Col span={6}>
-          <Card>
+          <Card style={statisticCard}>
             <Statistic
               title="Tổng tàu"
               value={inspectionDashboard.total}
@@ -33,7 +41,7 @@ export default function InspectionPage() {
         </Col>
 
         <Col span={6}>
-          <Card>
+          <Card style={statisticCard}>
             <Statistic
               title="Đã đăng kiểm"
               value={inspectionDashboard.inspected}
@@ -43,7 +51,7 @@ export default function InspectionPage() {
         </Col>
 
         <Col span={6}>
-          <Card>
+          <Card style={statisticCard}>
             <Statistic
               title="Sắp đến hạn"
               value={inspectionDashboard.expiring}
@@ -53,7 +61,7 @@ export default function InspectionPage() {
         </Col>
 
         <Col span={6}>
-          <Card>
+          <Card style={statisticCard}>
             <Statistic
               title="Quá hạn"
               value={inspectionDashboard.expired}
@@ -67,7 +75,11 @@ export default function InspectionPage() {
 
       <Row gutter={16}>
         <Col span={16}>
-          <Card title="Đăng kiểm theo tháng">
+          <Card
+            {...panelHeaderStyle}
+            style={panelStyle}
+            title="Đăng kiểm theo tháng"
+          >
             <ReactECharts
               style={{ height: 360 }}
 
@@ -97,7 +109,11 @@ export default function InspectionPage() {
         </Col>
 
         <Col span={8}>
-          <Card title="Kết quả đăng kiểm">
+          <Card
+            {...panelHeaderStyleSecondary}
+            style={panelStyle}
+            title="Kết quả đăng kiểm"
+          >
             <ReactECharts
               style={{ height: 360 }}
 
@@ -125,8 +141,12 @@ export default function InspectionPage() {
 
       <Row gutter={16}>
         <Col span={8}>
-          <Card title="Tiến độ đăng kiểm">
-            <Space direction="vertical" style={{ width: "100%" }} size={24}>
+          <Card
+            {...panelHeaderStyleSuccess}
+            style={panelStyle}
+            title="Tiến độ đăng kiểm"
+          >
+            <Space orientation="vertical" style={{ width: "100%" }} size={24}>
               <div>
                 Đã đăng kiểm
                 <Progress percent={95} status="success" />
@@ -146,7 +166,11 @@ export default function InspectionPage() {
         </Col>
 
         <Col span={16}>
-          <Card title="Danh sách tàu sắp đến hạn">
+          <Card
+            {...panelHeaderStyleWarning}
+            style={panelStyle}
+            title="Danh sách tàu sắp đến hạn"
+          >
             <Table
               rowKey="id"
 

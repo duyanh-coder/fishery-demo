@@ -10,15 +10,23 @@ import {
 import ReactECharts from "echarts-for-react";
 
 import { dashboard, trend, status, warnings } from "./mock";
+import { statisticCard } from "@/theme/statistic";
+import {
+  panelHeaderStyle,
+  panelHeaderStyleSecondary,
+  panelHeaderStyleSuccess,
+  panelHeaderStyleWarning,
+  panelStyle,
+} from "@/theme/panel";
 
 export default function VMSPage() {
   return (
-    <Space direction="vertical" size={24} style={{ width: "100%" }}>
+    <Space orientation="vertical" size={24} style={{ width: "100%" }}>
       {/* KPI */}
 
       <Row gutter={16}>
         <Col span={6}>
-          <Card>
+          <Card style={statisticCard}>
             <Statistic
               title="Đang kết nối"
               value={dashboard.online}
@@ -28,7 +36,7 @@ export default function VMSPage() {
         </Col>
 
         <Col span={6}>
-          <Card>
+          <Card style={statisticCard}>
             <Statistic
               title="Mất kết nối"
               value={dashboard.offline}
@@ -38,7 +46,7 @@ export default function VMSPage() {
         </Col>
 
         <Col span={6}>
-          <Card>
+          <Card style={statisticCard}>
             <Statistic
               title="Cảnh báo"
               value={dashboard.warning}
@@ -48,7 +56,7 @@ export default function VMSPage() {
         </Col>
 
         <Col span={6}>
-          <Card>
+          <Card style={statisticCard}>
             <Statistic
               title="SOS"
               value={dashboard.sos}
@@ -62,7 +70,11 @@ export default function VMSPage() {
 
       <Row gutter={16}>
         <Col span={16}>
-          <Card title="Biến động trạng thái VMS">
+          <Card
+            {...panelHeaderStyle}
+            style={panelStyle}
+            title="Biến động trạng thái VMS"
+          >
             <ReactECharts
               style={{
                 height: 360,
@@ -105,7 +117,11 @@ export default function VMSPage() {
         </Col>
 
         <Col span={8}>
-          <Card title="Phân bố trạng thái">
+          <Card
+            {...panelHeaderStyleSecondary}
+            style={panelStyle}
+            title="Phân bố trạng thái"
+          >
             <ReactECharts
               style={{
                 height: 360,
@@ -137,7 +153,11 @@ export default function VMSPage() {
 
       <Row gutter={16}>
         <Col span={8}>
-          <Card title="Tình trạng hệ thống">
+          <Card
+            {...panelHeaderStyleSuccess}
+            style={panelStyle}
+            title="Tình trạng hệ thống"
+          >
             <Space
               direction="vertical"
               style={{
@@ -160,7 +180,11 @@ export default function VMSPage() {
         </Col>
 
         <Col span={16}>
-          <Card title="Danh sách cảnh báo">
+          <Card
+            {...panelHeaderStyleWarning}
+            style={panelStyle}
+            title="Danh sách cảnh báo"
+          >
             <Table
               rowKey="id"
 

@@ -6,7 +6,7 @@ export interface Hatchery {
     owner: string;
     phone: string;
 
-    district: string;
+    ward: string;
 
     species: string;
 

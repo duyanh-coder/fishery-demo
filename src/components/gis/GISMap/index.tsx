@@ -10,6 +10,7 @@ import PortLayer from "../PortLayer";
 import StationLayer from "../StationLayer";
 import VesselLayer from "../VesselLayer";
 import WarningLayer from "../WarningLayer";
+import { panelStyle } from "@/theme/panel";
 
 interface GISMapProps {
     farms: GISFarm[];
@@ -29,7 +30,7 @@ const GISMap = ({
     warnings,
 }: GISMapProps) => {
     return (
-        <div className="gis-map">
+        <div className="gis-map" style={panelStyle}>
             <MapContainer
                 center={defaultCenter}
                 zoom={11}

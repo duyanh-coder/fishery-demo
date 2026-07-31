@@ -105,6 +105,12 @@ export default function AppHeader() {
         items: ["Quản lý thủy sản", "Vùng nuôi", "Chi tiết"],
       };
     }
+    if (pathname.startsWith("/hatchery/")) {
+      return {
+        title: "Chi tiết vùng nuôi",
+        items: ["Quản lý thủy sản", "Cơ sở giống", "Chi tiết"],
+      };
+    }
     switch (pathname) {
       case "/":
       case "/dashboard":
@@ -193,8 +199,13 @@ export default function AppHeader() {
 
       case "/reports-dashboard":
         return {
-          title: "Báo cáo",
-          items: ["Báo cáo"],
+          title: "Tổng quan",
+          items: ["Tổng quan"],
+        };
+      case "/reports-production":
+        return {
+          title: "Báo cáo sản lượng",
+          items: ["Báo cáo sản lượng"],
         };
       default:
         return {

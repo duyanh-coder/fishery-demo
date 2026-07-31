@@ -118,7 +118,7 @@ export const menuItems: MenuItem[] = [
       {
         key: "/reports-dashboard",
         icon: <FileTextOutlined />,
-        label: "Dashboard",
+        label: "Tổng quan",
       },
       {
         key: "/reports-production",

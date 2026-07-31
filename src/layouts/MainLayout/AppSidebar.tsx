@@ -12,23 +12,43 @@ export default function AppSidebar() {
   const rootPath = "/" + location.pathname.split("/").filter(Boolean)[0];
 
   return (
-    <Sider width={260} theme="dark">
-      <div className="logo">
+    <Sider
+      width={260}
+      theme="dark"
+      style={{
+        position: "sticky",
+        top: 0,
+        height: "100vh",
+        overflow: "auto",
+      }}
+      className="app-sidebar"
+    >
+      <div
+        // className="logo"
+        className="app-sidebar__logo"
+      >
         <AppLogo />
       </div>
 
-      <Menu
-        mode="inline"
-        theme="dark"
-        selectedKeys={[rootPath === "/" ? "/" : rootPath]}
-        defaultOpenKeys={["aquaculture", "fishing", "monitoring"]}
-        onClick={({ key }) => {
-          if (key.startsWith("/")) {
-            navigate(key);
-          }
-        }}
-        items={menuItems}
-      />
+      <div className="app-sidebar__content">
+        <Menu
+          className="app-sidebar__menu"
+          mode="inline"
+          theme="dark"
+          selectedKeys={[rootPath === "/" ? "/" : rootPath]}
+          defaultOpenKeys={[
+            "aquaculture",
+            // "fishing",
+            // "monitoring"
+          ]}
+          onClick={({ key }) => {
+            if (key.startsWith("/")) {
+              navigate(key);
+            }
+          }}
+          items={menuItems}
+        />
+      </div>
     </Sider>
   );
 }

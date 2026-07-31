@@ -32,8 +32,8 @@ export default function StationDetailDrawer({ open, station, onClose }: Props) {
             <Descriptions bordered column={2}>
                 <Descriptions.Item label="Mã">{station?.code}</Descriptions.Item>
                 <Descriptions.Item label="Tên">{station?.name}</Descriptions.Item>
-                <Descriptions.Item label="Tỉnh">{station?.province}</Descriptions.Item>
-                <Descriptions.Item label="Huyện">{station?.district}</Descriptions.Item>
+                <Descriptions.Item label="Tỉnh/TP">{station?.province}</Descriptions.Item>
+                <Descriptions.Item label="Phường/Xã">{station?.ward}</Descriptions.Item>
                 <Descriptions.Item label="Nguồn nước">{station?.waterType}</Descriptions.Item>
                 <Descriptions.Item label="Thiết bị">{station?.device}</Descriptions.Item>
                 <Descriptions.Item label="Tọa độ">{station?.latitude}, {station?.longitude}</Descriptions.Item>

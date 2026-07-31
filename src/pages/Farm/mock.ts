@@ -10,7 +10,7 @@ export const farms: Farm[] = [
         phone: "0909123456",
         address: "Ô Môn, Cần Thơ",
 
-        district: "Ô Môn",
+        ward: "Ô Môn",
         species: "Cá tra",
 
         area: 12.5,
@@ -116,7 +116,7 @@ export const farms: Farm[] = [
         phone: "0912345678",
         address: "Thốt Nốt, Cần Thơ",
 
-        district: "Thốt Nốt",
+        ward: "Thốt Nốt",
         species: "Tôm",
 
         area: 18.2,
@@ -163,7 +163,7 @@ export const farms: Farm[] = [
         phone: "0923456789",
         address: "Vĩnh Thạnh, Cần Thơ",
 
-        district: "Vĩnh Thạnh",
+        ward: "Vĩnh Thạnh",
         species: "Cua",
 
         area: 10.8,
@@ -210,7 +210,7 @@ export const farms: Farm[] = [
         phone: "0934567890",
         address: "Cờ Đỏ, Cần Thơ",
 
-        district: "Cờ Đỏ",
+        ward: "Cờ Đỏ",
         species: "Cá tra",
 
         area: 25.4,

@@ -11,7 +11,7 @@ const { Search } = Input;
 
 export interface GISFilterValue {
     province?: string;
-    district?: string;
+    ward?: string;
     status?: string;
     warningLevel?: string;
     keyword?: string;
@@ -62,13 +62,13 @@ export default function GisFilter({
                     <Col xs={24} md={12} lg={6}>
 
                         <Form.Item
-                            label="Tỉnh"
+                            label="Tỉnh/TP"
                             name="province"
                         >
 
                             <Select
                                 allowClear
-                                placeholder="Chọn tỉnh"
+                                placeholder="Chọn tỉnh/TP"
                             />
 
                         </Form.Item>
@@ -77,13 +77,13 @@ export default function GisFilter({
                     <Col xs={24} md={12} lg={6}>
 
                         <Form.Item
-                            label="Huyện"
-                            name="district"
+                            label="Phường/Xã"
+                            name="ward"
                         >
 
                             <Select
                                 allowClear
-                                placeholder="Chọn huyện"
+                                placeholder="Chọn Phường/Xã"
                             />
 
                         </Form.Item>

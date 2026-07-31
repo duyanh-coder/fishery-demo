@@ -17,6 +17,7 @@ import MapToolbar from "./components/MapToolbar";
 import FarmMarker from "./components/FarmMarker";
 import FarmPolygon from "./components/FarmPolygon";
 import FitBounds from "./hooks/useFitBounds";
+import { panelStyle } from "@/theme/panel";
 
 interface FarmMapProps {
   farm: Farm;
@@ -25,7 +26,7 @@ interface FarmMapProps {
 const FarmMap = ({ farm }: FarmMapProps) => {
   // console.log(farm);
   return (
-    <Card className="farm-map">
+    <Card className="farm-map" style={panelStyle}>
       <MapOverlay farm={farm} />
 
       <MapToolbar farm={farm} />

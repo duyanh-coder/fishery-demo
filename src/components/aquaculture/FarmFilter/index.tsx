@@ -17,12 +17,13 @@ import {
 } from "@ant-design/icons";
 
 import type { FarmFilter as FarmFilterType } from "@/types/farm";
+import { cardStyle } from "@/theme/card";
 
 const { Option } = Select;
 
 const DEFAULT_FILTER: FarmFilterType = {
     keyword: "",
-    district: undefined,
+    ward: undefined,
     species: undefined,
     status: undefined,
 };
@@ -73,7 +74,9 @@ export default function FarmFilter({
     };
 
     return (
-        <Card style={{ marginTop: 16 }}>
+        <Card style={cardStyle}
+            // style={{ marginTop: 16 }}
+        >
             <Row gutter={[16, 16]}>
 
                 <Col xs={24} md={8}>
@@ -90,12 +93,12 @@ export default function FarmFilter({
 
                 <Col xs={24} md={4}>
                     <Select
-                        value={filter.district}
+                        value={filter.ward}
                         onChange={(value) =>
-                            handleChange({ district: value as string })
+                            handleChange({ ward: value as string })
                         }
                         style={{ width: "100%" }}
-                        placeholder="Quận/Huyện"
+                        placeholder="Phường/Xã"
                         allowClear
                     >
                         <Option value="Ninh Kiều">Ninh Kiều</Option>
